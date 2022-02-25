@@ -1,15 +1,18 @@
 import React from "react"
+import CartWidget from "../cartwidget/CartWidget"
+import "./headerAndNavBar.css"
 
 const NavBar = () => {
     return (
-        <header>
-            <h1 style={{color: "#D4AF37"}}>AddFuel</h1>
+        <header className="header__layout">
+            <h1>🔥AddFuel</h1>
             <nav>
                 <a href="#">Inicio</a>
                 <a href="#">Productos</a>
                 <a href="#">Nosotros</a>
                 <a href="#">Contacto</a>
             </nav>
+            <CartWidget/>
         </header>
     )
 }

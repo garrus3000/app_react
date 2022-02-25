@@ -5,5 +5,4 @@ import App from "./App.js";
 
 import "./estilos.css"
 
-
 ReactDOM.render(<App/>,document.getElementById("root"))
