@@ -1,5 +1,9 @@
 
 .itemList {
     padding: 1rem;
-    color: #0d11fffd;
 } 
+
+.itemList h2 {
+    color: #0d11fffd;
+    padding-bottom: 1rem;
+}
