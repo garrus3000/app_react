@@ -1,0 +1,20 @@
+.itemList__layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.itemList__layout h3 {
+    text-align: center;
+    color: #555;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 500px) {
+    .itemList__layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

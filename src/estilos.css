@@ -11,9 +11,4 @@ html, body, #root {
 #root {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-}
-main {
-    flex-grow: 1;
-    padding: 1rem;
 }
