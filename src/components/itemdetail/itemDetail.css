@@ -1,0 +1,9 @@
+.itemDetail__layout {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border: 2px solid red;
+    color: red;
+    align-items: center;
+    font-size: 5rem;
+}
