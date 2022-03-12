@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react'
-
 import ItemDetail from '../itemdetail/ItemDetail';
 
 const itemDetalle = {
@@ -12,6 +11,7 @@ const itemDetalle = {
   };
 
 export default function ItemDetailContainer() {
+    const [loading, setLoading] =useState(true)
     const [detalle, setDetalle] = useState({})
 
     useEffect( ()=>{
@@ -21,12 +21,21 @@ export default function ItemDetailContainer() {
             }, 2000);
         })
 
-        getData.then((resultado)=>{
+        getData
+        .then((resultado)=>{
             setDetalle(resultado)
+            setLoading(false)
+        })
+        .catch((error)=>{
+            console.log("Error en carga de datos")
         })
     },[])
 
-    return (
-        <ItemDetail item={detalle}/>
-    )
+    if (loading) {
+        return <h3 className='itemDetail__container'  style={{color: "#3d40f5", fontSize: "1.5rem"}}>Cargando producto...</h3>
+    } else {
+        return (
+            <ItemDetail item={detalle} />
+        )
+    }
 }

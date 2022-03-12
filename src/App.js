@@ -5,16 +5,12 @@ import ItemDetailContainer from "./components/itemdetailcontainer/ItemDetailCont
 
 
 
-
-
-
 const App = () => {
     return (
         <>
             <NavBar/>
-            <ItemDetailContainer />
             <ItemListContainer/>
-            
+            <ItemDetailContainer/>
             <Footer/>
         </>
     )

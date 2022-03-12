@@ -1,10 +1,12 @@
 .itemContainer {
-    width: 15%;
-    border-radius: 5px;
+    width: 300px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     padding: 0 5px;
     padding-top: 30px;
     background-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-top: 0;
 }
 
 .itemContainer__counter {

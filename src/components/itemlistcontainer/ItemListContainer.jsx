@@ -38,79 +38,10 @@ const listaProductos = [{
   "description": "Monitored",
   "pictureUrl": "http://dummyimage.com/100x100.png/ff4444/ffffff",
   "stock": 16
-}, {
-  "id": 6,
-  "title": "Sonair",
-  "price": 35859.95,
-  "description": "Persevering",
-  "pictureUrl": "http://dummyimage.com/100x100.png/dddddd/000000",
-  "stock": 16
-}, {
-  "id": 7,
-  "title": "Bamity",
-  "price": 6264.7,
-  "description": "projection",
-  "pictureUrl": "http://dummyimage.com/100x100.png/ff4444/ffffff",
-  "stock": 25
-}, {
-  "id": 8,
-  "title": "Kanlam",
-  "price": 20317.25,
-  "description": "flexibility",
-  "pictureUrl": "http://dummyimage.com/100x100.png/dddddd/000000",
-  "stock": 16
-}, {
-  "id": 9,
-  "title": "Tres-Zap",
-  "price": 22043.56,
-  "description": "Persevering",
-  "pictureUrl": "http://dummyimage.com/100x100.png/ff4444/ffffff",
-  "stock": 21
-}, {
-  "id": 10,
-  "title": "Tres-Zap",
-  "price": 11358.71,
-  "description": "concept",
-  "pictureUrl": "http://dummyimage.com/100x100.png/5fa2dd/ffffff",
-  "stock": 17
-}, {
-  "id": 11,
-  "title": "Zontrax",
-  "price": 44275.99,
-  "description": "emulation",
-  "pictureUrl": "http://dummyimage.com/100x100.png/ff4444/ffffff",
-  "stock": 18
-}, {
-  "id": 12,
-  "title": "Ventosanzap",
-  "price": 4568.87,
-  "description": "Balanced",
-  "pictureUrl": "http://dummyimage.com/100x100.png/5fa2dd/ffffff",
-  "stock": 9
-}, {
-  "id": 13,
-  "title": "Gembucket",
-  "price": 42729.13,
-  "description": "open architecture",
-  "pictureUrl": "http://dummyimage.com/100x100.png/cc0000/ffffff",
-  "stock": 15
-}, {
-  "id": 14,
-  "title": "Vagram",
-  "price": 43039.62,
-  "description": "product",
-  "pictureUrl": "http://dummyimage.com/100x100.png/5fa2dd/ffffff",
-  "stock": 19
-}, {
-  "id": 15,
-  "title": "Flexidy",
-  "price": 44939.21,
-  "description": "Object-based",
-  "pictureUrl": "http://dummyimage.com/100x100.png/dddddd/000000",
-  "stock": 19
 }]
 
 function ItemListContainer() {
+  const [loading, setLoading] = useState(true)
   const [productos, setProductos] = useState([])
 
   useEffect(() => {
@@ -124,20 +55,25 @@ function ItemListContainer() {
     .then( (resultado)=>{
       console.log("Datos cargados con exito")
       setProductos(resultado)
+      setLoading(false)
     })
     .catch( (error)=>{
       console.log("Error en datos")
     })
   }, [])
 
-  return (
-    <>
-      <h2 className='itemList__layout--title'>Bienvenidos</h2>
-      <div className='itemList__layout'>
-        <ItemList items={productos}/>
-      </div>
-    </>
-  );
+  if (loading) {
+    return <h3 className='itemList__layout' style={{color: "#f5593d", fontSize: "2rem"}} >Cargando listado de productos...</h3>
+  } else {
+    return (
+      <>
+        <h2 className='itemList__layout--title'>Bienvenidos</h2>
+        <div className='itemList__layout'>
+          <ItemList items={productos} />
+        </div>
+      </>
+    )
+  }
 }
 
 export default ItemListContainer
