@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ItemList from '../itemlist/ItemList';
-import "./itemListContainer.css"
-
+import "./itemListContainer.scss"
 
 const listaProductos = [{
   "id": 1,
@@ -63,12 +62,12 @@ function ItemListContainer() {
   }, [])
 
   if (loading) {
-    return <h3 className='itemList__layout' style={{color: "#f5593d", fontSize: "2rem"}} >Cargando listado de productos...</h3>
+    return <h3  style={{color: "#f5593d", fontSize: "2rem", textAlign: "center"}} >Cargando listado de productos...</h3>
   } else {
     return (
       <>
-        <h2 className='itemList__layout--title'>Bienvenidos</h2>
-        <div className='itemList__layout'>
+        <h2 className='itemListContainer__layout--tittle'>Bienvenidos</h2>
+        <div>
           <ItemList items={productos} />
         </div>
       </>

@@ -1,12 +1,12 @@
 import React from 'react'
-import "./itemDetail.css"
+import "./itemDetail.scss"
 import ItemCount from "../itemcount/ItemCount"
 
 
 function itemDetail({ item }) {
   return (
-    <article>
-      <div className="itemDetail__container">
+    <section>
+      <article className="itemDetail__container">
         <div className='itemDetail__layout'>
           <img src={item.pictureUrl} alt={item.description} />
           <div className="itemDetail__layout--divDetails">
@@ -16,8 +16,8 @@ function itemDetail({ item }) {
           </div>
         </div>
         <ItemCount stock={item.stock} initial={1} />
-      </div>
-    </article>
+      </article>
+    </section>
   )
 }
 

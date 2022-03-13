@@ -1,7 +1,6 @@
 import NavBar from "./components/header/NavBar";
 import Footer from "./components/footer/Footer";
-import ItemListContainer from "./components/itemlistcontainer/ItemListContainer";
-import ItemDetailContainer from "./components/itemdetailcontainer/ItemDetailContainer";
+import Main from "./components/main/Main";
 
 
 
@@ -9,8 +8,7 @@ const App = () => {
     return (
         <>
             <NavBar/>
-            <ItemListContainer/>
-            <ItemDetailContainer/>
+            <Main/>
             <Footer/>
         </>
     )

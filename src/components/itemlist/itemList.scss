@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
 
-.itemList__layout h3 {
+.itemList__layout--tittle {
     text-align: center;
+    font-size: 1.7rem;
     color: #555;
-    font-size: 1.5rem;
 }
 
 @media (max-width: 500px) {

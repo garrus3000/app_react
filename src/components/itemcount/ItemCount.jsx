@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react"
 import "./itemcount.css"
 
-function ItemCount({stock, initial, onAdd}) {
+function ItemCount({stock, initial}) {
     const [cantidad, setCantidad] = useState(initial)
 
     const handleSumar = () => {
