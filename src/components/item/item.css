@@ -10,6 +10,12 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.item__layout:hover {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .item__layout img {
@@ -19,12 +25,20 @@
 }
 
 .item__layout--title {
-    width: 100%;
-    padding: 5px 5px;
     color: #0288b1;
     text-transform: uppercase;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.item__layout--price {
+    width: 100%;
+    padding: 5px 5px;
+    color: rgb(97, 93, 93);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.1rem;
+
 }
 
 .item__layout--stock {
@@ -37,9 +51,11 @@
 }
 
 .item__layout--description {
-    margin: 5px 5px;
-    color: rgb(97, 93, 93);
+    padding: 5px;
+    color: #ffffff;
     text-transform: capitalize;
+    background-color: #555;
+    overflow: hidden;
 }
 
 .item__layout--btnDetail {

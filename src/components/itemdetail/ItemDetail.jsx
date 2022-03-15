@@ -6,17 +6,18 @@ import ItemCount from "../itemcount/ItemCount"
 function itemDetail({ item }) {
   return (
     <section>
-      <article className="itemDetail__container">
-        <div className='itemDetail__layout'>
-          <img src={item.pictureUrl} alt={item.description} />
-          <div className="itemDetail__layout--divDetails">
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-            <p>${item.price}</p>
+      {item.map((el) =>
+        <article className="itemDetail__container" key={el.id}>
+          <div className='itemDetail__layout'>
+            <img src={el.pictureUrl} alt={el.description} />
+            <div className="itemDetail__layout--divDetails">
+              <h3>{el.title}</h3>
+              <p>{el.description}</p>
+              <p>${el.price}</p>
+            </div>
           </div>
-        </div>
-        <ItemCount stock={item.stock} initial={1} />
-      </article>
+          <ItemCount stock={el.stock} initial={1} />
+        </article>)}
     </section>
   )
 }
