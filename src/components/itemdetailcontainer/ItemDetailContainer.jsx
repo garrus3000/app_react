@@ -2,7 +2,8 @@ import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import ItemDetail from '../itemdetail/ItemDetail';
-import listaProductos from "../../data/products"
+import products from "../../data/products.json"
+
 
 export default function ItemDetailContainer() {
     const [loading, setLoading] =useState(true)
@@ -10,9 +11,10 @@ export default function ItemDetailContainer() {
     const {itemId} = useParams()
 
     useEffect( ()=>{
+        setLoading(true)
         const getData = new Promise ((res,rej)=>{
             setTimeout(() => {
-                const idFiltrado = listaProductos.filter(el => el.id === parseInt(itemId))
+                const idFiltrado = products.filter(el => el.id === parseInt(itemId))
                 res(idFiltrado)
             }, 2000);
         })
@@ -25,6 +27,9 @@ export default function ItemDetailContainer() {
         .catch((error)=>{
             toast.error("Error al cargar productos", {
                 position: "top-center"});
+        })
+        .finally(()=>{
+            setLoading(false)
         })
     },[itemId])
 

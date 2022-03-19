@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import ItemList from '../itemlist/ItemList';
 import "./itemListContainer.scss"
-import listaProductos from "../../data/products"
+import products from "../../data/products.json"
 
 function ItemListContainer() {
   const [loading, setLoading] = useState(true)
@@ -11,11 +11,12 @@ function ItemListContainer() {
   const {categoryId} = useParams()
 
   useEffect(() => {
+    setLoading(true)
     const getData = new Promise((res, rej) => {
       categoryId? toast.info(`Cargando ${categoryId}...`) : toast.success("🖥️ Cargando Home", {icon: false});
 
       setTimeout(() => {
-        res( categoryId? listaProductos.filter(catFiltered => catFiltered.category === categoryId) : listaProductos)
+        res( categoryId? products.filter(catFiltered => catFiltered.category === categoryId) : products)
         toast.dismiss()
       }, 2000)
     })
@@ -27,6 +28,9 @@ function ItemListContainer() {
     })
     .catch( (error)=>{
       toast.error("Error al cargar productos");
+    })
+    .finally(()=>{
+      setLoading(false)
     })
   }, [categoryId])
 

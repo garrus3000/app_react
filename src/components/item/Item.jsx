@@ -10,7 +10,7 @@ function Item({ item }) {
       <img src={item.pictureUrl} alt={item.title} />
       <p className='item__layout--price'>$ {item.price}</p>
       <Link to={`/item/${item.id}`} >
-        <button className='item__layout--btnDetail'>Ver Detalle</button>
+        <button className='item__layout--btnDetail'>Ver detalle</button>
       </Link>
       <p className='item__layout--stock'>Stock disponible: {item.stock}</p>
     </article>
