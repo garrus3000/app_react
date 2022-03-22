@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import "./cartwidget.scss"
+import {contextoCarrito} from "../../Context/CartContext"
 
-function cartWidget() {
+function CartWidget() {
+    const { cartCounter } = useContext(contextoCarrito)
+
     return (
-        <Link to="cart">
-            <span className='material-icons cartwidget__layout'>shopping_cart</span>
+        <Link to="cart"  className='cartwidget__layout'>
+            <span className='material-icons '>shopping_cart</span>
+            {cartCounter()}
         </Link>
     )
 }
 
-export default cartWidget
+export default CartWidget

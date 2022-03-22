@@ -2,8 +2,9 @@ import React from 'react'
 import "./main.scss"
 import { Routes , Route } from 'react-router-dom'
 import ItemListContainer from '../itemlistcontainer/ItemListContainer'
-import Carrito from "../carrito/Carrito"
+import Cart from '../Cart/Cart'
 import ItemDetailContainer from "../itemdetailcontainer/ItemDetailContainer"
+
 
 const Main = () => {
     return (
@@ -12,7 +13,7 @@ const Main = () => {
                 <Route path="/" element={<ItemListContainer/>}/>
                 <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
                 <Route path="/item/:itemId" element={<ItemDetailContainer/>}/>
-                <Route path="/cart" element={<Carrito/>}/>
+                <Route path="/cart" element={<Cart/>}/>
             </Routes>
         </main>
     )

@@ -12,22 +12,27 @@
     a {
         text-decoration: none;
         color: #fff;
-        font-weight: 600;
         font-size: 1.2rem;
         margin-left: 1rem;
-        font-family: 'Quicksand', sans-serif;
-        font-weight: 700;
-        letter-spacing: 1px;
+        transition: 0.5s ease;
+    }
+
+    a:hover {
+        color: rgba(236, 202, 6, 1);
+
     }
 }
 
 .header__brand {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 700;
-    font-style: italic;
     background: -webkit-linear-gradient(#555, #fff, #555, #fff);
     background-clip: initial;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: 0.2s ease-in-out;
+    transition: 0.3s ease-in;
+
+    &:hover {
+        text-shadow: 0 1px 1px rgba(236, 202, 6, 0.5);
+    }
 }

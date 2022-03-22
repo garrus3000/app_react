@@ -1,13 +1,13 @@
 import React from 'react'
-import "./item.css"
+import "./item.scss"
 import { Link } from "react-router-dom"
 
 function Item({ item }) {
   return (
-    <article className='item__layout'>
+    <article className='item__layout' key={item.id}>
       <p className='item__layout--description'>{item.category}</p>
-      <p className='item__layout--title' key={item.id}>{item.title}</p>
       <img src={item.pictureUrl} alt={item.title} />
+      <p className='item__layout--title'>{item.title}</p>
       <p className='item__layout--price'>$ {item.price}</p>
       <Link to={`/item/${item.id}`} >
         <button className='item__layout--btnDetail'>Ver detalle</button>
