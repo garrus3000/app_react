@@ -7,10 +7,18 @@ function CartWidget() {
     const { cartCounter } = useContext(contextoCarrito)
 
     return (
-        <Link to="cart"  className='cartwidget__layout'>
-            <span className='material-icons '>shopping_cart</span>
-            {cartCounter()}
-        </Link>
+        <div>
+            {cartCounter() === 0 ? (null
+            ) : (
+                <div className='cartwidget__layout'>
+                    <Link to={`/cart`} >
+                        <span className='material-icons '>shopping_cart</span>
+                    </Link>
+                    <div className={cartCounter() !== 0 ? "counter" : "counterDisable"}>{cartCounter()}</div>
+                </div>
+            )}
+            {console.log(cartCounter())}
+        </div>
     )
 }
 

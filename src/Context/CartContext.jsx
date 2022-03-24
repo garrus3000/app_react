@@ -5,7 +5,6 @@ const {Provider} = contextoCarrito
 
 
 const CartProvider = ({children}) => {
-
     const [cart, setCart] = useState([])
 
     const addItem = (item, quantity) => {
@@ -41,7 +40,7 @@ const CartProvider = ({children}) => {
         return totalItems;
     }
 
-    const precioTotal = () => {
+    const finalPrice = () => {
         const compraTotal = cart.reduce((acc, item) => (acc + item.quantity * item.price), 0)
         return compraTotal;
     }
@@ -52,7 +51,7 @@ const CartProvider = ({children}) => {
         clear,
         removeItem,
         cartCounter,
-        precioTotal
+        finalPrice
     }
 
 

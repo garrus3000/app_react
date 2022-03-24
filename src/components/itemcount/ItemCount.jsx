@@ -3,22 +3,22 @@ import { useState } from "react"
 import { Link } from 'react-router-dom'
 import "./itemcount.scss"
 
-function ItemCount({stock, initial, onAdd}) {
+function ItemCount({ stock, initial, onAdd }) {
     const [cantidad, setCantidad] = useState(initial)
 
     const handleSumar = () => {
-        if(cantidad < stock){
+        if (cantidad < stock) {
             setCantidad(cantidad + 1)
         }
     }
 
     const handleRestar = () => {
         if (cantidad > initial)
-        setCantidad(cantidad - 1)
+            setCantidad(cantidad - 1)
     }
 
     const handleAdd = () => {
-        onAdd( cantidad )
+        onAdd(cantidad)
     }
 
     return (

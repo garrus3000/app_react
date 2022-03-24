@@ -35,8 +35,8 @@ function ItemDetail( {item} ) {
             ) : (
               <div className='itemDetail__divBtn'>
                 <p>Cantidad: {quantity}</p>
-                <button onClick={() => setQuantity(0)} className="itemDetail__divBtn--buyMore" >Reiniciar compra</button>
                 <Link to={`/cart`} className="itemDetail__divBtn--goCart" >Terminar mi compra</Link>
+                <Link to={`/`} className="itemDetail__divBtn--buyMore" >Seguir comprando</Link>
               </div>
             )}
           </div>
