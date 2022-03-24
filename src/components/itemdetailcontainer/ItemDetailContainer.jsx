@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import ItemDetail from '../itemdetail/ItemDetail';
 import products from "../../data/products.json"
+import Loader from '../Loader/Loader';
 
 
 export default function ItemDetailContainer() {
@@ -33,11 +34,7 @@ export default function ItemDetailContainer() {
         })
     },[itemId])
 
-    if (loading) {
-        return <div className='loader__margin'><div className="cssload-loader">Detalle</div></div>
-    } else {
-        return (
-            <ItemDetail item={item} />
-        )
-    }
+    return (
+        loading ? <Loader texto="Detalle" /> : <ItemDetail item={item} />
+    )
 }

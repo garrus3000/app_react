@@ -3,7 +3,8 @@
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
+    margin: 0 10%;
+    border-radius: 15px;
     text-align: center;
 
     button {
@@ -34,19 +35,25 @@
     justify-content: space-between;
     align-items: center;
     text-align: start;
+    background-color: #fff;
+    border-top: 0;
+
 
     img {
         width: 100px;
         height: 100px;
     }
 
-    h3 {
+    h2 {
         font-size: 1rem;
         font-weight: normal;
-        min-width: 100px;
+        min-width: 120px;
         max-width: 100px;
         color: #08b102;
-    }
+        text-align: start;
+        font-weight: 700;
+        margin-bottom: 5px;
+}
 
     p {
         text-align: center;
@@ -111,13 +118,13 @@
         border-radius: 5px;
         cursor: pointer;
         border: 0;
-        background-color: #555;
+        background-color: #b10808;
         color: #fff;
         font-size: 1rem;
         font-weight: normal;
         margin: 1rem 2rem;
         text-align: center;
-        height: 50px;
+        height: 3rem;
 
         &:hover {
             background-color: #e70808;
@@ -144,6 +151,5 @@
         font-size: 1rem;
         font-weight: normal;
         margin: 1rem 2rem;
-        height: 50px;
     }
 }
