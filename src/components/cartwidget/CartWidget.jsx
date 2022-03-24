@@ -17,7 +17,6 @@ function CartWidget() {
                     <div className={cartCounter() !== 0 ? "counter" : "counterDisable"}>{cartCounter()}</div>
                 </div>
             )}
-            {console.log(cartCounter())}
         </div>
     )
 }
