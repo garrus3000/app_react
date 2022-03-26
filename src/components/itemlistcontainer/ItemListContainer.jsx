@@ -5,7 +5,7 @@ import ItemList from '../itemlist/ItemList';
 import "./itemListContainer.scss"
 import Loader from '../Loader/Loader'
 import { db } from '../ItemCollection/ItemCollection';
-import { getDocs, collection } from "firebase/firestore"
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 
 function ItemListContainer() {
@@ -17,42 +17,16 @@ function ItemListContainer() {
 		const productsCollection = collection(db, 'products')
 		const request = getDocs(productsCollection)
 
-
-		request
-			.then((resultado) => {
-				resultado.docs.forEach(doc => {
-					// setProductos(productos => [...productos, doc.data()])
-					//ver despues si sirve o no y PREGUNTAR
-					const arrayResultado = resultado.docs.map((doc) => doc.data())
-					setProductos(arrayResultado)
-					setLoading(false)
-				})
-			})
-			.catch((error) => {
-				toast.error("Error al cargar productos");
-			})
-			.finally(() => {
-				setLoading(false)
-			})
-
-
-
-
-
-		// setLoading(true)
-		// const getData = new Promise((res, rej) => {
-		// 	categoryId ? toast.info(`Cargando ${categoryId}...`) : toast.success("🖥️ Cargando Home", { icon: false });
-
-		// 	setTimeout(() => {
-		// 		res(categoryId ? products.filter(catFiltered => catFiltered.category === categoryId) : products)
-		// 		toast.dismiss()
-		// 	}, 2000)
-		// })
-
-		// getData
+//INCIO FUNCIONA SOLO PRODUCTOS
+		// request
 		// 	.then((resultado) => {
-		// 		setProductos(resultado)
-		// 		setLoading(false)
+		// 		resultado.docs.forEach(doc => {
+		// 			// setProductos(productos => [...productos, doc.data()])
+		// 			//ver despues si sirve o no y PREGUNTAR
+		// 			const arrayResultado = resultado.docs.map((doc) => doc.data())
+		// 			setProductos(arrayResultado)
+		// 			setLoading(false)
+		// 		})
 		// 	})
 		// 	.catch((error) => {
 		// 		toast.error("Error al cargar productos");
@@ -60,14 +34,50 @@ function ItemListContainer() {
 		// 	.finally(() => {
 		// 		setLoading(false)
 		// 	})
-	// }, [categoryId])
 
+		//esto es olo en reemplazo a linea 47 y 48 // setProductos(resultado.docs.map(prod => (prod.data())))
+// FIN FUNCIONA SOLO PRODUCTOS
 
-	}, [])
+		categoryId ? toast.info(`Cargando ${categoryId}...`, {autoClose: 1000}) : toast.success("🖥️ Cargando Home", { icon: false });
+
+		if (categoryId) {
+			const queryCategory = query(collection(db, 'products'), where('category', '==', categoryId))
+			getDocs(queryCategory)
+				.then(resultado => {
+					const categoryFiltered = resultado.docs.map((doc) => doc.data())
+					setProductos(categoryFiltered)
+					setLoading(false)
+				})
+				.catch((error) => {
+					toast.error("Error al cargar productos");
+				})
+				.finally(() => {
+					setLoading(false)
+				})
+		} 
+		else {
+			request
+				.then((resultado) => {
+					resultado.docs.forEach(doc => {
+						const arrayResultado = resultado.docs.map((doc) => doc.data())
+						setProductos(arrayResultado)
+						setLoading(false)
+						toast.dismiss()
+					})
+				})
+				.catch((error) => {
+					toast.error("Error al cargar productos");
+				})
+				.finally(() => {
+					setLoading(false)
+				})
+		}  
+		setLoading(true)
+	}, [categoryId])
 
 
 	return (
-		loading ? <Loader texto="Productos" /> : <ItemList items={productos} />
+		loading ? <Loader texto={categoryId ? categoryId : "Productos"} /> : <ItemList items={productos} />
 	)
 }
 

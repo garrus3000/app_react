@@ -16,28 +16,27 @@ export default function ItemDetailContainer() {
 
         
 
-    //     setLoading(true)
-    //     const getData = new Promise ((res,rej)=>{
-    //         setTimeout(() => {
-    //             const idFiltrado = products.filter(el => el.id === parseInt(itemId))
-    //             res(idFiltrado)
-    //         }, 2000);
-    //     })
+        setLoading(true)
+        const getData = new Promise ((res,rej)=>{
+            setTimeout(() => {
+                const idFiltrado = products.filter(el => el.id === parseInt(itemId))
+                res(idFiltrado)
+            }, 2000);
+        })
 
-    //     getData
-    //     .then((resultado)=>{
-    //         setItem(resultado)
-    //         setLoading(false)
-    //     })
-    //     .catch((error)=>{
-    //         toast.error("Error al cargar productos", {
-    //             position: "top-center"});
-    //     })
-    //     .finally(()=>{
-    //         setLoading(false)
-    //     })
-    // },[itemId])
-    },[])
+        getData
+        .then((resultado)=>{
+            setItem(resultado)
+            setLoading(false)
+        })
+        .catch((error)=>{
+            toast.error("Error al cargar productos", {
+                position: "top-center"});
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
+    },[itemId])
 
     return (
         loading ? <Loader texto="Detalle" /> : <ItemDetail item={item} />
