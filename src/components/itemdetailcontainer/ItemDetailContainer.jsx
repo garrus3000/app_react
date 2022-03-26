@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import ItemDetail from '../itemdetail/ItemDetail';
 import Loader from '../Loader/Loader';
-import { db } from '../ItemCollection/ItemCollection';
+import { db } from '../../firebase/Firebase';
 import { getDocs, collection, query, where } from "firebase/firestore"
 
 

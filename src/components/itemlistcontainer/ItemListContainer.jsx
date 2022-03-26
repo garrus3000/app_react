@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import ItemList from '../itemlist/ItemList';
 import "./itemListContainer.scss"
 import Loader from '../Loader/Loader'
-import { db } from '../ItemCollection/ItemCollection';
+import { db } from '../../firebase/Firebase';
 import { getDocs, collection, query, where } from "firebase/firestore"
 
 
