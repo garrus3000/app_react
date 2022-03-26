@@ -21,6 +21,10 @@
     img {
         width: 33%;
     }
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
 }
 
 .itemDetail__layout--divDetails {

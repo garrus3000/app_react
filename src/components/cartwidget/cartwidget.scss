@@ -2,6 +2,11 @@
     margin: 0 1.2rem;
     display: flex;
     flex-direction: row;
+    text-decoration: none;
+
+    span {
+        color: #fff;
+    }
 
     .counter {
         display: flex;

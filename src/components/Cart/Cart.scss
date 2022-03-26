@@ -6,6 +6,7 @@
     margin: 0 10%;
     border-radius: 15px;
     text-align: center;
+	background-color: #dadada;
 
     button {
         height: 30px;
@@ -53,7 +54,7 @@
         text-align: start;
         font-weight: 700;
         margin-bottom: 5px;
-}
+	}
 
     p {
         text-align: center;
@@ -63,6 +64,27 @@
     .detail {
         font-weight: bold;
         color: #555;
+    }
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+		div, h2 {
+			text-align: center;
+			width: 10rem;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+		span {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			.detail {
+				background-color: #08b102;
+			}
+		}
     }
 }
 
@@ -76,6 +98,7 @@
     font-weight: bold;
     color: #555;
     padding: 2rem 2rem;
+    
 
     p {
         text-decoration: 2px solid underline #555;

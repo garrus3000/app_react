@@ -13,10 +13,8 @@ const Cart = () => {
 			{cart.map((producto) =>
 				<div key={producto.id} className="cart__layout--item">
 					<img src={producto.pictureUrl} alt={producto.title} />
-					<div>
-						<h2>{producto.title} </h2>
-						<span>Unidades x <span className="detail">{producto.quantity}</span></span>
-					</div>
+					<h2>{producto.title} </h2>
+					<p className="detail">Unidades x {producto.quantity}</p>
 					<div>
 						<p className="detail">Precio</p>
 						<p>${producto.price}</p>
