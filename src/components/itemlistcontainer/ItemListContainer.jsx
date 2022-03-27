@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import ItemList from '../itemlist/ItemList';
-import "./itemListContainer.scss"
 import Loader from '../Loader/Loader'
 import { db } from '../../firebase/Firebase';
 import { getDocs, collection, query, where } from "firebase/firestore"
@@ -16,27 +15,6 @@ function ItemListContainer() {
 	useEffect(() => {
 		const productsCollection = collection(db, 'products')
 		const request = getDocs(productsCollection)
-
-//INCIO FUNCIONA SOLO PRODUCTOS
-		// request
-		// 	.then((resultado) => {
-		// 		resultado.docs.forEach(doc => {
-		// 			// setProductos(productos => [...productos, doc.data()])
-		// 			//ver despues si sirve o no y PREGUNTAR
-		// 			const arrayResultado = resultado.docs.map((doc) => doc.data())
-		// 			setProductos(arrayResultado)
-		// 			setLoading(false)
-		// 		})
-		// 	})
-		// 	.catch((error) => {
-		// 		toast.error("Error al cargar productos");
-		// 	})
-		// 	.finally(() => {
-		// 		setLoading(false)
-		// 	})
-
-		//esto es olo en reemplazo a linea 47 y 48 // setProductos(resultado.docs.map(prod => (prod.data())))
-// FIN FUNCIONA SOLO PRODUCTOS
 
 		categoryId ? toast.info(`Cargando ${categoryId}...`, {autoClose: 1000}) : toast.success("🖥️ Cargando Home", { icon: false });
 

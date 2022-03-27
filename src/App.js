@@ -5,7 +5,6 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter } from "react-router-dom";
 import CartProvider from "./Context/CartContext";
-import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 
 const App = () => {

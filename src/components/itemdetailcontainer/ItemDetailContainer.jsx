@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import ItemDetail from '../itemdetail/ItemDetail';
 import Loader from '../Loader/Loader';
 import { db } from '../../firebase/Firebase';
-import { getDocs, collection, query, where } from "firebase/firestore"
+import { getDocs, collection } from "firebase/firestore"
 
 
 
@@ -14,12 +14,8 @@ export default function ItemDetailContainer() {
     const { itemId } = useParams()
 
     useEffect(() => {
-
         const productsCollection = collection(db, 'products')
 		const request = getDocs(productsCollection)
-
-        // const queryDetail = query(collection(db, 'products'), where('id', '==', parseInt(itemId)))
-        // getDocs(queryDetail)
 
         request
             .then(resultado => {
@@ -34,28 +30,6 @@ export default function ItemDetailContainer() {
             .finally(() => {
                 setLoading(false)
             })
-
-
-        // setLoading(true)
-        // const getData = new Promise ((res,rej)=>{
-        //     setTimeout(() => {
-        //         const idFiltrado = products.filter(el => el.id === parseInt(itemId))
-        //         res(idFiltrado)
-        //     }, 2000);
-        // })
-
-        // getData
-        // .then((resultado)=>{
-        //     setItem(resultado)
-        //     setLoading(false)
-        // })
-        // .catch((error)=>{
-        //     toast.error("Error al cargar productos", {
-        //         position: "top-center"});
-        // })
-        // .finally(()=>{
-        //     setLoading(false)
-        // })
     }, [itemId])
 
     return (

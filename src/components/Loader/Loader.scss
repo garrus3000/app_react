@@ -1,3 +1,7 @@
+.loader__margin {
+    margin: 5rem;
+}
+
 .cssload-loader {
 	width: 90%;
 	height: 88px;
@@ -47,74 +51,6 @@
 	}
 	100% {
 		left: 85%;
-		height: 53px;
-		width: 26px;
-	}
-}
-
-@-o-keyframes cssload-load {
-	0% {
-		left: 0;
-		height: 53px;
-		width: 26px;
-	}
-	50% {
-		height: 14px;
-		width: 70px;
-	}
-	100% {
-		left: 411px;
-		height: 53px;
-		width: 26px;
-	}
-}
-
-@-ms-keyframes cssload-load {
-	0% {
-		left: 0;
-		height: 53px;
-		width: 26px;
-	}
-	50% {
-		height: 14px;
-		width: 70px;
-	}
-	100% {
-		left: 411px;
-		height: 53px;
-		width: 26px;
-	}
-}
-
-@-webkit-keyframes cssload-load {
-	0% {
-		left: 0;
-		height: 53px;
-		width: 26px;
-	}
-	50% {
-		height: 14px;
-		width: 70px;
-	}
-	100% {
-		left: 411px;
-		height: 53px;
-		width: 26px;
-	}
-}
-
-@-moz-keyframes cssload-load {
-	0% {
-		left: 0;
-		height: 53px;
-		width: 26px;
-	}
-	50% {
-		height: 14px;
-		width: 70px;
-	}
-	100% {
-		left: 411px;
 		height: 53px;
 		width: 26px;
 	}
