@@ -5,10 +5,11 @@
     justify-content: space-evenly;
 }
 
-.itemList__layout--tittle {
+.itemList__tittle {
     text-align: center;
     font-size: 1.7rem;
     color: #555;
+    margin: 2rem;
 }
 
 @media (max-width: 500px) {

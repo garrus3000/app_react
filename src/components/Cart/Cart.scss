@@ -26,6 +26,13 @@
     }
 }
 
+.cart_banner {
+    width: 100%;
+    height:50vh;
+    object-fit: cover;
+    object-position: 80% 0 ;
+}
+
 .cart__layout--item {
     display: flex;
     margin: 1rem 1rem;
