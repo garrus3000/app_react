@@ -3,33 +3,21 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import ItemDetail from '../itemdetail/ItemDetail';
 import Loader from '../Loader/Loader';
-import { db } from '../../firebase/Firebase';
-import { getDocs, collection } from "firebase/firestore"
-
+import { productsCollection } from '../../firebase/Firebase';
+import { getDocs, query, where } from "firebase/firestore"
 
 
 export default function ItemDetailContainer() {
     const [loading, setLoading] = useState(true)
-    const [item, setItem] = useState({})
+    const [item, setItem] = useState()
     const { itemId } = useParams()
 
     useEffect(() => {
-        const productsCollection = collection(db, 'products')
-		const request = getDocs(productsCollection)
-
-        request
-            .then(resultado => {
-                const categoryFiltered = resultado.docs.map(doc => doc.data())
-                const itemDetail = categoryFiltered.filter(item => item.id === parseInt(itemId))
-                setItem(itemDetail)
-                setLoading(false)
-            })
-            .catch((error) => {
-                toast.error("Error al cargar productos");
-            })
-            .finally(() => {
-                setLoading(false)
-            })
+        const itemFilter = query(productsCollection, where('id', '==', Number(itemId)))
+		getDocs(itemFilter)
+            .then(res => setItem(res.docs[0].data()))
+            .catch((error) => toast.error("Error al cargar productos"))
+            .finally(() => setLoading(false))
     }, [itemId])
 
     return (

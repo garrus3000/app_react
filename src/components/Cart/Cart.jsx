@@ -10,7 +10,7 @@ const Cart = () => {
 	const { cart, clear, cartCounter, removeItem, finalPrice } = useContext(contextoCarrito)
 
 	return (
-		<div>
+		<>
 			{cartCounter() === 0 ? (
 				<div className="emptyCart__layout">
 					<Loader texto="Carrito vacio" />
@@ -46,7 +46,7 @@ const Cart = () => {
 					<FormPedido />
 				</>
 			)}
-		</div>
+		</>
 	)
 }
 
