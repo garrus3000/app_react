@@ -14,7 +14,6 @@ const FormPedido = () => {
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
 
-
     const formSubmit = (e) => {
         e.preventDefault()
         const clientOrder = {
@@ -30,13 +29,9 @@ const FormPedido = () => {
 
         const orderCollection = collection(db,"orders")
         const orderId = addDoc(orderCollection,clientOrder)
-        console.log("Promesa creada",orderId, "Documento creado", clientOrder)//Documento enviado a la base de datos
 
         orderId
-            .then(res => {
-                console.log("Promesa enviada",res, "Id del documento creado", res.id)//res.id es el id del documento creado
-
-                toast.success(`Compra realizada con exito \n Orden de compra: ${res.id}`, 
+            .then(res => toast.success(`ORDEN DE COMPRA: ${res.id}`,
                 {
                     position: "top-center",
                     autoClose: false,
@@ -45,8 +40,7 @@ const FormPedido = () => {
                     pauseOnHover: true,
                     draggable: false,
                     progress: undefined
-                })
-            })
+                }))
             .catch(error => toast.error("Error al hacer pedido"))
             .finally(() => clear())
     }
@@ -67,16 +61,62 @@ const FormPedido = () => {
         setEmail(e.target.value)
     }
 
+    const handleClick_resetForm = () => {
+        setNombre("")
+        setApellido("")
+        setPhone("")
+        setEmail("")
+    }
+
+    const handleClick_clear = () => {
+        clear()
+    }
+
 
     return (
         <div className='form__layout'>
             <form className='form__layout--details'>
-                <input type="text" placeholder="Nombre" onChange={handleChange_nombre} value={nombre}/>
-                <input type="text" placeholder="Apellido" onChange={handleChange_apellido} value={apellido}/>
-                <input type="tel" placeholder="Telefono" onChange={handleChange_phone} value={phone}/>
-                <input type="email" placeholder="Email" pattern=".+@globex\.com" onChange={handleChange_email} value={email}/>
-                <button type="submit" onClick={formSubmit} className="btn">Confirmar compra</button>
-                <button type="reset" className="btn btn-cancelar">Reset formulario</button>
+                <input
+                    type="text"
+                    placeholder="Nombre"
+                    onChange={handleChange_nombre}
+                    value={nombre} required />
+                <input
+                    type="text"
+                    placeholder="Apellido"
+                    onChange={handleChange_apellido}
+                    value={apellido} required />
+                <input
+                    type="tel"
+                    placeholder="Telefono"
+                    onChange={handleChange_phone}
+                    value={phone} required />
+                <input
+                    type="email"
+                    placeholder="Email"
+                    onChange={handleChange_email}
+                    value={email} required />
+            
+                {nombre === "" || apellido === "" || phone === "" || email === "" ?
+                    (<button
+                        disabled={true}
+                        type="submit"
+                        className="btn--disabled">Confirmar compra</button>
+                    ) : (
+                        <button
+                            type="submit"
+                            onClick={formSubmit}
+                            className="btn">Confirmar compra</button>
+                    )}
+
+                <button
+                    type="reset"
+                    onClick={handleClick_resetForm}
+                    className="btn btn-cancelar">Limpiar formulario</button>
+                <button
+                    type="reset"
+                    onClick={handleClick_clear}
+                    className="btn">Cancelar pedido</button>
             </form>
         </div>
     )
