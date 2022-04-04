@@ -1,4 +1,4 @@
-import React, { useContext,useState } from "react"
+import React, { useContext, useState } from "react"
 import './FormPedido.scss'
 import { db } from '../../firebase/Firebase'
 import { collection ,serverTimestamp , addDoc } from "firebase/firestore"
@@ -14,7 +14,6 @@ const FormPedido = () => {
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
 
-
     const formSubmit = (e) => {
         e.preventDefault()
         const clientOrder = {
@@ -28,10 +27,8 @@ const FormPedido = () => {
             total: finalPrice(),
             status: "Pendiente",
         }
-
         const orderCollection = collection(db, "orders")
         const orderId = addDoc(orderCollection, clientOrder)
-
         orderId
             .then(res => {
                 toast.success(`ORDEN DE COMPRA: ${res.id}`,
@@ -76,7 +73,7 @@ const FormPedido = () => {
         clear()
     }
 
-    
+
     return (
         <div className='form__layout'>
             <form className='form__layout--details'>
@@ -100,18 +97,18 @@ const FormPedido = () => {
                     placeholder="Email"
                     onChange={handleChange_email}
                     value={email} required />
-            
+
                 {nombre === "" || apellido === "" || phone === "" || email === "" ?
                     (<button
                         disabled={true}
                         type="submit"
                         className="btn--disabled">Confirmar compra</button>
-                        ) : (
-                            <button
+                    ) : (
+                        <button
                             type="submit"
                             onClick={formSubmit}
                             className="btn">Confirmar compra</button>
-                            )}
+                    )}
 
                 <button
                     type="reset"
