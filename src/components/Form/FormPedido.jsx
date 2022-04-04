@@ -7,40 +7,44 @@ import { toast } from "react-toastify"
 
 
 const FormPedido = () => {
-	const { cart, finalPrice, clear } = useContext(contextoCarrito)
+    const { cart, finalPrice, clear } = useContext(contextoCarrito)
 
     const [nombre, setNombre] = useState("")
     const [apellido, setApellido] = useState("")
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
 
+
     const formSubmit = (e) => {
         e.preventDefault()
         const clientOrder = {
             buyer: {
-                name: { nombre, apellido},
+                name: { nombre, apellido },
                 phone: phone,
                 email: email
             },
             items: cart,
             date: serverTimestamp(),
-            total: finalPrice()
+            total: finalPrice(),
+            status: "Pendiente",
         }
 
-        const orderCollection = collection(db,"orders")
-        const orderId = addDoc(orderCollection,clientOrder)
+        const orderCollection = collection(db, "orders")
+        const orderId = addDoc(orderCollection, clientOrder)
 
         orderId
-            .then(res => toast.success(`ORDEN DE COMPRA: ${res.id}`,
-                {
-                    position: "top-center",
-                    autoClose: false,
-                    hideProgressBar: true,
-                    closeOnClick: false,
-                    pauseOnHover: true,
-                    draggable: false,
-                    progress: undefined
-                }))
+            .then(res => {
+                toast.success(`ORDEN DE COMPRA: ${res.id}`,
+                    {
+                        position: "top-center",
+                        autoClose: false,
+                        hideProgressBar: true,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: false,
+                        progress: undefined
+                    })
+            })
             .catch(error => toast.error("Error al hacer pedido"))
             .finally(() => clear())
     }
@@ -72,7 +76,7 @@ const FormPedido = () => {
         clear()
     }
 
-
+    
     return (
         <div className='form__layout'>
             <form className='form__layout--details'>
@@ -102,12 +106,12 @@ const FormPedido = () => {
                         disabled={true}
                         type="submit"
                         className="btn--disabled">Confirmar compra</button>
-                    ) : (
-                        <button
+                        ) : (
+                            <button
                             type="submit"
                             onClick={formSubmit}
                             className="btn">Confirmar compra</button>
-                    )}
+                            )}
 
                 <button
                     type="reset"

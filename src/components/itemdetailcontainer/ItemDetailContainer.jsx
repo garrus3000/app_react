@@ -9,7 +9,7 @@ import { getDocs, query, where } from "firebase/firestore"
 
 export default function ItemDetailContainer() {
     const [loading, setLoading] = useState(true)
-    const [item, setItem] = useState()
+    const [item, setItem] = useState({})
     const { itemId } = useParams()
 
     useEffect(() => {

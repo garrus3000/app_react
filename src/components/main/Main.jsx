@@ -5,6 +5,7 @@ import ItemListContainer from '../itemlistcontainer/ItemListContainer'
 import Cart from '../Cart/Cart'
 import ItemDetailContainer from "../itemdetailcontainer/ItemDetailContainer"
 import PageNotFound from '../PageNotFound/PageNotFound'
+import Checkout from '../Form/Checkout'
 
 
 const Main = () => {
@@ -15,6 +16,7 @@ const Main = () => {
                 <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
                 <Route path="/item/:itemId" element={<ItemDetailContainer/>}/>
                 <Route path="/cart" element={<Cart/>}/>
+                <Route path="/checkout" element={<Checkout/>}/>
                 <Route path='*' element={<PageNotFound/>}/>
             </Routes>
         </main>
