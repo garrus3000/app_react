@@ -31,7 +31,15 @@ const FormPedido = () => {
         const orderId = addDoc(orderCollection, clientOrder)
         orderId
             .then(res => {
-                toast.success(`ORDEN DE COMPRA: ${res.id}`,
+                toast.success(() => (
+                    <span>
+                        ORDEN DE COMPRA: <b>{res.id}</b>
+                        <div></div>
+                    <button onClick={() => navigator.clipboard.writeText(res.id)}>
+                    Copiar
+                    </button>
+                    </span>
+                    ),
                     {
                         position: "top-center",
                         autoClose: false,
@@ -39,8 +47,8 @@ const FormPedido = () => {
                         closeOnClick: false,
                         pauseOnHover: true,
                         draggable: false,
-                        progress: undefined
-                    })
+                        progress: undefined,
+                    });
             })
             .catch(error => toast.error("Error al hacer pedido"))
             .finally(() => clear())
