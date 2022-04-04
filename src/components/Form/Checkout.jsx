@@ -54,14 +54,12 @@ const Checkout = () => {
             {filtrado.map (order => (
                 <div key={order.id} className="itemDetail__container">
                     <div className='itemDetail__layout'>
-                        <p>ID {order.id}</p>
-                        <p>Status {order.status}</p>
-                        <p>Nombre {order.buyer.name.nombre}</p>
-                        <p>Apellido {order.buyer.name.apellido}</p>
-                        <p>Telefono {order.buyer.phone}</p>
-                        <p>email {order.buyer.email}</p>
-                        <p> Items titulo {order.items.map(item => item.title)}</p>
-                        <div> Imagenes {order.items.map(item => <img key={item.id} src={item.pictureUrl} alt={item.title} />)}</div>
+                        <p>ESTADO {order.status}</p>
+                        <p>NOMBRE {order.buyer.name.nombre +" "+ order.buyer.name.apellido}</p>
+                        {/* <p>Apellido {order.buyer.name.apellido}</p> */}
+                        <p>TELEFONO {order.buyer.phone}</p>
+                        <p>EMAIL {order.buyer.email}</p>
+                        <p> COMPRA {order.items.map(item => item.title)}</p>
                         <p>Total final {order.total}</p>
                     </div>
                 </div>))}

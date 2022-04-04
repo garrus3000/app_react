@@ -46,21 +46,6 @@ const FormPedido = () => {
             .finally(() => clear())
     }
 
-    const handleChange_nombre = (e) => {
-        setNombre(e.target.value)
-    }
-
-    const handleChange_apellido = (e) => {
-        setApellido(e.target.value)
-    }
-
-    const handleChange_phone = (e) => {
-        setPhone(e.target.value)
-    }
-
-    const handleChange_email = (e) => {
-        setEmail(e.target.value)
-    }
 
     const handleClick_resetForm = () => {
         setNombre("")
@@ -80,22 +65,22 @@ const FormPedido = () => {
                 <input
                     type="text"
                     placeholder="Nombre"
-                    onChange={handleChange_nombre}
+                    onChange={(e)=>setNombre(e.target.value)}
                     value={nombre} required />
                 <input
                     type="text"
                     placeholder="Apellido"
-                    onChange={handleChange_apellido}
+                    onChange={(e)=>setApellido(e.target.value)}
                     value={apellido} required />
                 <input
                     type="tel"
                     placeholder="Telefono"
-                    onChange={handleChange_phone}
+                    onChange={(e)=>setPhone(e.target.value)}
                     value={phone} required />
                 <input
                     type="email"
                     placeholder="Email"
-                    onChange={handleChange_email}
+                    onChange={(e)=>setEmail(e.target.value)}
                     value={email} required />
 
                 {nombre === "" || apellido === "" || phone === "" || email === "" ?
