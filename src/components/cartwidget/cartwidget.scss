@@ -6,14 +6,15 @@
 
     span {
         color: #fff;
+        font-size: 2.3rem;
     }
 
     .counter {
         display: flex;
         align-items: center;
-        padding: 0 5px;
         color: rgba(236, 202, 6, 1);
         font-size: 1.2rem;
+        justify-content: start;
     }
 
     .counterDisable {

@@ -1,7 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+
 .footer__layout {
-    padding: 0.5rem;
-    background-color: rgb(255, 208, 56);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 1.5rem;
+    color: #fff;
+    background-color: #333;
     text-align: center;
     font-weight: 500;
-    font-size: 0.8rem ;
+    font-size: 1rem ;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+
+    svg {
+        fill: #fff;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1rem;
+    }
+
+    ul {
+        list-style: none;
+        text-align: start;
+        li {
+            margin: 0.1rem;
+            &.by {
+                color: #aaaaaa;
+                font-size: 1.2rem; 
+                font-family: 'Exo 2', sans-serif;
+            }
+            &.me {
+                color: #daa520;
+                font-size: 1.25rem;
+                font-family: 'Cinzel', serif;
+            }
+        }
+    }
 }

@@ -1,21 +1,23 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import CartWidget from "../cartwidget/CartWidget"
-import "./headerAndNavBar.scss"
+import "./NavBar.scss"
 
 const NavBar = () => {
     return (
         <header className="header__layout">
-            <Link to="/">
-                <h1 className="header__brand">AddFuel</h1>
-            </Link>
+            <div>
+                <Link to="/">
+                    <h1 className="header__brand">AddFuel</h1>
+                </Link>
+                <CartWidget/>
+            </div>
             <nav>
-                <Link to={`/category/procesadores`}>Procesadores</Link>
-                <Link to={`/category/graficas`}>Graficas</Link>
-                <Link to={`/category/perifericos`}>Perifericos</Link>
-                <Link to={`/checkout`}>Seguimiento</Link>
+                <NavLink to={`/category/procesadores`}>Procesadores</NavLink>
+                <NavLink to={`/category/graficas`}>Graficas</NavLink>
+                <NavLink to={`/category/perifericos`}>Perifericos</NavLink>
+                <NavLink to={`/seguimiento`}>Seguimiento</NavLink>
             </nav>
-            <CartWidget/>
         </header>
     )
 }

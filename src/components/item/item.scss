@@ -14,50 +14,47 @@
     transition: 0.3s ease-in-out;
 
     &:hover {
-        border: 2px solid rgba(255, 255, 255, 0.22);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        border: 2px solid rgba(255, 255, 255, 1);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     }
     img {
         margin: 5px 5px;
         min-height: 200px;
         max-height: 200px;
     }
-}
 
-.item__layout--title {
-    color: #0288b1;
-    text-transform: uppercase;
-    padding-top: 10px;
-}
-
-.item__layout--price {
-    width: 100%;
-    padding: 5px 5px;
-    color: rgb(97, 93, 93);
-    padding-top: 10px;
-    font-size: 1.1rem;
-    padding-bottom: 10px;
-}
-
-.item__layout--stock {
-    width: 100%;
-    padding: 5px 5px;
-    background-color: rgb(223, 223, 223);
-    color: #333;
-    margin-top: 10px;
-    padding: 10px 10px;
-}
-
-.item__layout--description {
-    padding: 5px;
-    color: #ffffff;
-    text-transform: capitalize;
-    background-color: #555;
-    overflow: hidden;
-}
-
-.item__layout--btnDetail {
-    background-color: rgb(33, 66, 156);
+    .title {
+        color: #0288b1;
+        text-transform: uppercase;
+        padding-top: 10px;
+    }
+    .price {
+        width: 100%;
+        padding: 5px 5px;
+        color: rgb(97, 93, 93);
+        padding-top: 10px;
+        font-size: 1.1rem;
+        padding-bottom: 10px;
+    }
+    .stock {
+        width: 100%;
+        padding: 5px 5px;
+        background-color: rgb(223, 223, 223);
+        color: #333;
+        margin-top: 10px;
+        padding: 10px 10px;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+    .description {
+        padding: 5px;
+        color: #ffffff;
+        text-transform: capitalize;
+        background-color: #555;
+        overflow: hidden;
+    }
+    .btnDetail{
+        background-color: rgb(33, 66, 156);
     margin-bottom: 5px;
     color: #fff;
     padding: 7px 5px;
@@ -69,8 +66,9 @@
     cursor: pointer;
     width: 75%;
     transition: 0.3s ease;
-}
-.item__layout--btnDetail:hover {
-    background-color: rgb(41, 86, 211);
-    width: 90%;
+    &:hover {
+        background-color: rgb(41, 86, 211);
+        width: 90%;
+        }
+    }
 }

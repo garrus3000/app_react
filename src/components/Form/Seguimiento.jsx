@@ -2,11 +2,9 @@ import { getDocs, collection } from 'firebase/firestore'
 import React, {useState, useEffect} from 'react'
 import { toast } from 'react-toastify'
 import { db } from '../../firebase/Firebase'
-import Loader from '../Loader/Loader';
 
 
-const Checkout = () => {
-    const [loading, setLoading] = useState(true)
+const Seguimiento = () => {
     const [order, setOrder] = useState([])
     const [inputValue, setInputValue] = useState("")
     const [btnSearch, setBtnSearch] = useState("")
@@ -28,7 +26,6 @@ const Checkout = () => {
         getDocs(getPedido)
             .then(res => setOrder(res.docs.map(doc => ({id: doc.id,  ...doc.data()}))))
             .catch(error => toast.error("Error al cargar pedido"))
-            .finally(() => setLoading(false))
     }, [btnSearch])
 
 
@@ -50,12 +47,11 @@ const Checkout = () => {
                 >Buscar
                 </button>
             </form>
-            {loading && <Loader texto={`Cargando`}/>}
-            {filtrado.map (order => (
+            {filtrado.map(order => (
                 <div key={order.id} className="itemDetail__container">
                     <div className='itemDetail__layout'>
                         <p>ESTADO {order.status}</p>
-                        <p>NOMBRE {order.buyer.name.nombre +" "+ order.buyer.name.apellido}</p>
+                        <p>NOMBRE {order.buyer.name.nombre + " " + order.buyer.name.apellido}</p>
                         {/* <p>Apellido {order.buyer.name.apellido}</p> */}
                         <p>TELEFONO {order.buyer.phone}</p>
                         <p>EMAIL {order.buyer.email}</p>
@@ -68,4 +64,4 @@ const Checkout = () => {
 }
 
 
-export default Checkout
+export default Seguimiento

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+.header__layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        font-family: 'Inter', sans-serif;
+        font-weight: normal;
+        border-left: 2px solid #daa520;
+        border-right: 2px solid #daa520;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        @media screen and (max-width: 830px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        margin: 0.5rem 1rem;
+        transition: 0.5s ease;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 5px;
+        padding: 5px 5px;
+        transition: 0.5s ease;
+        &.active {
+            background-color: #555;
+            box-shadow: 1px 2px 4px rgba(255, 255, 255, 0.13);
+        }
+    }
+
+    a:hover {
+        color: rgba(236, 202, 6, 1);
+    }
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.header__div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header__brand {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 2.5rem;
+    background: -webkit-linear-gradient(#555, #fff, #555, #fff);
+    background-clip: initial;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.3s ease-in;
+
+    &:hover {
+        text-shadow: 0 1px 1px rgba(236, 202, 6, 0.5);
+    }
+}

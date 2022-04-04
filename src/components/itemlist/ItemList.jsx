@@ -6,7 +6,6 @@ function ItemList({ items }) {
 
     return (
         <section>
-            <h2 className='itemList__tittle'>Productos</h2>
             <div className='itemList__layout'>
                 {items.map((item) => <Item key={item.id} item={item} />)}
             </div>

@@ -5,14 +5,14 @@ import { Link } from "react-router-dom"
 function Item({ item }) {
 	return (
 		<article className='item__layout' key={item.id}>
-			<p className='item__layout--description'>{item.category}</p>
+			<p className='description'>{item.category}</p>
 			<img src={item.pictureUrl} alt={item.title} />
-			<p className='item__layout--title'>{item.title}</p>
-			<p className='item__layout--price'>$ {item.price}</p>
+			<p className='title'>{item.title}</p>
+			<p className='price'>$ {item.price}</p>
 			<Link to={`/item/${item.id}`} >
-				<button className='item__layout--btnDetail'>Ver detalle</button>
+				<button className='btnDetail'>Ver detalle</button>
 			</Link>
-			<p className='item__layout--stock'>Stock disponible: {item.stock}</p>
+			<p className='stock'>Stock disponible: {item.stock}</p>
 		</article>
 	)
 }

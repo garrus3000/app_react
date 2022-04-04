@@ -1,11 +1,6 @@
 main {
     flex-grow: 1;
-    padding: 1rem;
-    background-color: rgba(241, 241, 241, 0.5);
-}
-
-.mainTitle__layout {
-    text-align: center;
-    color: #333;
-    font-size: 2em;
+    padding: 8vh 2vh;
+    background-image: url("../../assets/img/fondo.png");
+    background-attachment: fixed;
 }

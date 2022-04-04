@@ -56,3 +56,20 @@ form {
     }
   }
 }
+
+.btnToast {
+  margin: 10px;
+  width: 100%;
+  height: 30px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #00b300;
+  color: #fff;
+  cursor: pointer;
+  
+  &:active {
+    background-color: rgb(61, 87, 231);
+  }
+}

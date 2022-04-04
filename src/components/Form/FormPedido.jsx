@@ -35,7 +35,7 @@ const FormPedido = () => {
                     <span>
                         ORDEN DE COMPRA: <b>{res.id}</b>
                         <div></div>
-                    <button onClick={() => navigator.clipboard.writeText(res.id)}>
+                    <button className=" btnToast" onClick={() => navigator.clipboard.writeText(res.id)}>
                     Copiar
                     </button>
                     </span>
@@ -54,16 +54,11 @@ const FormPedido = () => {
             .finally(() => clear())
     }
 
-
     const handleClick_resetForm = () => {
         setNombre("")
         setApellido("")
         setPhone("")
         setEmail("")
-    }
-
-    const handleClick_clear = () => {
-        clear()
     }
 
 
@@ -73,22 +68,22 @@ const FormPedido = () => {
                 <input
                     type="text"
                     placeholder="Nombre"
-                    onChange={(e)=>setNombre(e.target.value)}
+                    onChange={(e) => setNombre(e.target.value)}
                     value={nombre} required />
                 <input
                     type="text"
                     placeholder="Apellido"
-                    onChange={(e)=>setApellido(e.target.value)}
+                    onChange={(e) => setApellido(e.target.value)}
                     value={apellido} required />
                 <input
                     type="tel"
                     placeholder="Telefono"
-                    onChange={(e)=>setPhone(e.target.value)}
+                    onChange={(e) => setPhone(e.target.value)}
                     value={phone} required />
                 <input
                     type="email"
                     placeholder="Email"
-                    onChange={(e)=>setEmail(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                     value={email} required />
 
                 {nombre === "" || apellido === "" || phone === "" || email === "" ?
@@ -107,10 +102,6 @@ const FormPedido = () => {
                     type="reset"
                     onClick={handleClick_resetForm}
                     className="btn btn-cancelar">Limpiar formulario</button>
-                <button
-                    type="reset"
-                    onClick={handleClick_clear}
-                    className="btn">Cancelar pedido</button>
             </form>
         </div>
     )

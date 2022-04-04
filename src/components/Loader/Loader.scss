@@ -17,12 +17,12 @@
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 2rem;
-	color: #555;
+	color: #fff;
 }
 
 .cssload-loader::before, .cssload-loader::after {
 	content: "";
-	background: rgba(61, 60, 50, 0.3);
+	background: rgba(61, 60, 50, 0.5);
 	position: absolute;
     border-radius: 10px;
 	animation: cssload-load 0.81s infinite alternate ease-in-out;
