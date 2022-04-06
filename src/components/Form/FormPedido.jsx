@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react"
-import './formPedido.scss'
+import './FormPedido.scss'
 import { db } from '../../firebase/Firebase'
 import { collection ,serverTimestamp , addDoc } from "firebase/firestore"
 import { contextoCarrito } from "../../Context/CartContext"

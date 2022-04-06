@@ -21,6 +21,12 @@
         width: 2rem;
         height: 2rem;
         margin-right: 1rem;
+        transition: 0.7s ease;
+        &:hover {
+            cursor: pointer;
+            fill: #57c5f7;
+            transform: scale(1.3) rotate(360deg);
+        }
     }
 
     ul {
@@ -34,7 +40,7 @@
                 font-family: 'Exo 2', sans-serif;
             }
             &.me {
-                color: #daa520;
+                color: #57c5f7;
                 font-size: 1.25rem;
                 font-family: 'Cinzel', serif;
             }
