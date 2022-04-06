@@ -15,8 +15,12 @@ Ecommerce en [React JS](https://reactjs.org/), con base de datos en [Firebase](h
 ## Información sobre la tienda:
 Proyecto final del curso de React JS, dictado por [Coder House](https://www.coderhouse.com/).
 
-[![Video](https://i.imgur.com/e9Bbhp7.png)](https://user-images.githubusercontent.com/94937038/161926311-8c7d10c9-61a6-4c88-bdb6-bfbe454ad763.mp4)
-https://user-images.githubusercontent.com/94937038/161926311-8c7d10c9-61a6-4c88-bdb6-bfbe454ad763.mp4
+[![AddFuel](https://i.imgur.com/e9Bbhp7.png)](https://addfuel-ecommerce-beta.vercel.app/)
+
+
+
+https://user-images.githubusercontent.com/94937038/161928071-6b504a3e-ec77-4231-8ef5-77acdfcfe23e.mp4
+
 
 La idea viene de un antiguo trabajo en un local de venta y reparacion de pc . El nombre de sería una mala traducción al inglés de un modismo regional.
 
