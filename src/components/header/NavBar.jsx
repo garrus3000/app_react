@@ -10,14 +10,16 @@ const NavBar = () => {
                 <Link to="/">
                     <h1 className="header__brand">AddFuel</h1>
                 </Link>
-                <CartWidget/>
             </div>
             <nav>
-                <NavLink to={`/category/procesadores`}>Procesadores</NavLink>
-                <NavLink to={`/category/graficas`}>Graficas</NavLink>
-                <NavLink to={`/category/perifericos`}>Perifericos</NavLink>
-                <NavLink to={`/seguimiento`}>Seguimiento</NavLink>
+                <ul>
+                    <li><NavLink to={`/category/procesadores`}>Procesadores</NavLink></li>
+                    <li><NavLink to={`/category/graficas`}>Graficas</NavLink></li>
+                    <li><NavLink to={`/category/perifericos`}>Perifericos</NavLink></li>
+                    <li><NavLink to={`/seguimiento`}>Seguimiento</NavLink></li>
+                </ul>
             </nav>
+            <CartWidget />
         </header>
     )
 }

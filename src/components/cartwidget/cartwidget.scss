@@ -1,20 +1,21 @@
 .cartwidget__layout {
-    margin: 0 1.2rem;
-    display: flex;
-    flex-direction: row;
+    margin: 0 0.8rem;
     text-decoration: none;
+    display: flex;
+    max-width: 100px;
 
     span {
         color: #fff;
-        font-size: 2.3rem;
+        font-size: 2rem;
     }
 
     .counter {
         display: flex;
         align-items: center;
         color: rgba(236, 202, 6, 1);
-        font-size: 1.2rem;
-        justify-content: start;
+        font-size: 1.3rem;
+        min-width: 33px;
+        max-width: 33px;
     }
 
     .counterDisable {
@@ -23,6 +24,8 @@
         padding: 0 5px;
         color: transparent;
         font-size: 1.2rem;
+        min-width: 33px;
+        max-width: 33px;
     }
 }
 

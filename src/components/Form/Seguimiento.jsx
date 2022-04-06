@@ -2,6 +2,7 @@ import { getDocs, collection } from 'firebase/firestore'
 import React, {useState, useEffect} from 'react'
 import { toast } from 'react-toastify'
 import { db } from '../../firebase/Firebase'
+import "./seguimiento.scss"
 
 
 const Seguimiento = () => {
@@ -31,32 +32,37 @@ const Seguimiento = () => {
 
     return (
         <>
-            <form className="form__layout">
-                <label
-                    name="ingresarID"
-                >Ingresar ID de compra sin espacios
-                </label>
-                <input
-                    type="text"
-                    name='ingresarID'
-                    placeholder="Ingrese su ID de compra"
-                    onChange={handleChange_input}
-                />
-                <button
-                    onClick={handleBtnSearch}
-                >Buscar
-                </button>
-            </form>
+            <div className='form__container'>
+                <h2>Seguimiento de pedidos</h2>
+                <p>Evite espacios en blanco</p>
+                <form>
+                    <div>
+                        <input
+                            type="text"
+                            name='ingresarID'
+                            placeholder="Ingresar su ID de compra"
+                            onChange={handleChange_input}
+                        />
+                    </div>
+                    <div>
+                        <button
+                            onClick={handleBtnSearch}
+                        >Buscar<span className="material-icons">local_shipping</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
             {filtrado.map(order => (
-                <div key={order.id} className="itemDetail__container">
-                    <div className='itemDetail__layout'>
-                        <p>ESTADO {order.status}</p>
-                        <p>NOMBRE {order.buyer.name.nombre + " " + order.buyer.name.apellido}</p>
-                        {/* <p>Apellido {order.buyer.name.apellido}</p> */}
-                        <p>TELEFONO {order.buyer.phone}</p>
-                        <p>EMAIL {order.buyer.email}</p>
-                        <p> COMPRA {order.items.map(item => item.title)}</p>
-                        <p>Total final {order.total}</p>
+                <div key={order.id}>
+                    <div className="seguimiento__container">
+                        <article>
+                            <p>ESTADO: <span>{order.status}</span> </p>
+                            <p>NOMBRE: <span>{order.buyer.name.nombre + " " + order.buyer.name.apellido}</span></p>
+                            <p>TELEFONO: <span>{order.buyer.phone}</span></p>
+                            <p>EMAIL: <span>{order.buyer.email}</span></p>
+                            <p>Compra: <span>{order.items.map(item => item.title).join(', ')}</span></p>
+                            <p>Total compra: <span>${order.total}</span></p>
+                        </article>
                     </div>
                 </div>))}
         </>

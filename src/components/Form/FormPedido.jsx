@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react"
-import './FormPedido.scss'
+import './formPedido.scss'
 import { db } from '../../firebase/Firebase'
 import { collection ,serverTimestamp , addDoc } from "firebase/firestore"
 import { contextoCarrito } from "../../Context/CartContext"
@@ -13,6 +13,16 @@ const FormPedido = () => {
     const [apellido, setApellido] = useState("")
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
+
+    const checking = email;
+
+    const cheackValidEmail = (email) => {
+        const regex = /\S+@\S+\.\S+/
+        regex.test(email)
+        if (regex.test(checking)) {
+            return true
+        }
+    }
 
     const formSubmit = (e) => {
         e.preventDefault()
@@ -29,17 +39,18 @@ const FormPedido = () => {
         }
         const orderCollection = collection(db, "orders")
         const orderId = addDoc(orderCollection, clientOrder)
+
         orderId
             .then(res => {
                 toast.success(() => (
                     <span>
                         ORDEN DE COMPRA: <b>{res.id}</b>
                         <div></div>
-                    <button className=" btnToast" onClick={() => navigator.clipboard.writeText(res.id)}>
-                    Copiar
-                    </button>
+                        <button className=" btnToast" onClick={() => navigator.clipboard.writeText(res.id)}>
+                            Copiar
+                        </button>
                     </span>
-                    ),
+                ),
                     {
                         position: "top-center",
                         autoClose: false,
@@ -84,9 +95,14 @@ const FormPedido = () => {
                     type="email"
                     placeholder="Email"
                     onChange={(e) => setEmail(e.target.value)}
-                    value={email} required />
+                    value={email}  required />
 
-                {nombre === "" || apellido === "" || phone === "" || email === "" ?
+                {cheackValidEmail() ?
+                    (<div className="email__valid">Email valido</div>
+                    ) : (
+                        <div className="email__invalid">Ingrese un email valido</div>)}
+
+                {nombre === "" || apellido === "" || phone === "" || email === "" || (! cheackValidEmail(email)) ?
                     (<button
                         disabled={true}
                         type="submit"

@@ -1,0 +1,100 @@
+.form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // padding: 1rem 1rem;
+
+    h2 {
+        background-color: rgba(255, 255, 255, 0.5);
+        color: #000;
+        padding: 0.5rem 0.5rem;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+        }
+
+    p {
+        font-size: 1.1rem;
+        color: #fff;
+        text-align: center;
+        margin-top: 2rem;
+        background-color: transparent;
+    }
+
+    label {
+        color: #000;
+        padding: 0.5pc 3pc;
+        font-size: 1.2rem;
+        height: 2rem;
+        font-weight: bold;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5rem;
+        input {
+            height: 40px;
+            border-radius: 3px;
+            border: 1px solid #000;
+            background-color: #dadada;
+            padding: 1pc 0.5pc;
+            font-size: 1.2rem;
+            &:focus {
+                outline: 2px solid #5757ff;
+            }
+            &:hover {
+                background-color: #fff;
+            }
+        }
+        button {
+            color: #5757ff;
+            font-size: 1.2rem;
+            padding: 0.4pc 1pc;
+            background-color: #eeeeee;
+            border: 2px solid #5757ff;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            width: 100%;
+            &:hover {
+                background-color: #fff;
+            }
+            span {
+                margin: 0 0.5pc;
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        h2 {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.seguimiento__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+
+    article {
+        margin: 0.5rem 1rem;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 1rem;
+    }
+    p{
+        color: #5757ff;
+        font-weight: bold;
+        padding: 0.3rem;
+        
+        span {
+            color: #000;
+            font-weight: normal;
+        }
+    }
+}
