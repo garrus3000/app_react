@@ -60,7 +60,7 @@ const Seguimiento = () => {
                             <p>NOMBRE: <span>{order.buyer.name.nombre + " " + order.buyer.name.apellido}</span></p>
                             <p>TELEFONO: <span>{order.buyer.phone}</span></p>
                             <p>EMAIL: <span>{order.buyer.email}</span></p>
-                            <p>Compra: <span>{order.items.map(item => item.title).join(', ')}</span></p>
+                            <p>Compra: <span>{order.items.map(item => (item.title +" x "+ item.quantity)).join(', ')}</span></p>
                             <p>Total compra: <span>${order.total}</span></p>
                         </article>
                     </div>

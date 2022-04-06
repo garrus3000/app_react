@@ -16,7 +16,7 @@
 		@media screen and (max-width: 1060px)  {
 			width: 65%;
 		}
-
+		
 		input {
 			margin-bottom: 10px;
 			width: 100%;
@@ -25,6 +25,15 @@
 			border: 1px solid #ccc;
 			padding-left: 10px;
 			padding-right: 10px;
+		
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+			&[type=number] {
+				-moz-appearance: textfield;
+			}
 		}
 
 		.btn {
@@ -47,7 +56,7 @@
 			}
 		}
 
-		.btn--disabled {
+		.btn__disabled {
 			color: #fff;
 			margin: 10px;
 			width: 100%;

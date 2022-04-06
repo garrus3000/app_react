@@ -24,8 +24,11 @@ const FormPedido = () => {
         }
     }
 
+    const isItValid = nombre === "" || apellido === "" || phone === "" || email === "" || ( !cheackValidEmail(email));
+
     const formSubmit = (e) => {
         e.preventDefault()
+        disableBtn_formSubmit()
         const clientOrder = {
             buyer: {
                 name: { nombre, apellido },
@@ -72,6 +75,9 @@ const FormPedido = () => {
         setEmail("")
     }
 
+    const disableBtn_formSubmit = () => {
+        setNombre("")
+    }
 
     return (
         <div className='form__layout'>
@@ -87,7 +93,7 @@ const FormPedido = () => {
                     onChange={(e) => setApellido(e.target.value)}
                     value={apellido} required />
                 <input
-                    type="tel"
+                    type="number"
                     placeholder="Telefono"
                     onChange={(e) => setPhone(e.target.value)}
                     value={phone} required />
@@ -102,11 +108,11 @@ const FormPedido = () => {
                     ) : (
                         <div className="email__invalid">Ingrese un email valido</div>)}
 
-                {nombre === "" || apellido === "" || phone === "" || email === "" || (! cheackValidEmail(email)) ?
+                { isItValid  ?
                     (<button
                         disabled={true}
                         type="submit"
-                        className="btn--disabled">Confirmar compra</button>
+                        className="btn__disabled">Confirmar compra</button>
                     ) : (
                         <button
                             type="submit"
