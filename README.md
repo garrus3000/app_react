@@ -45,21 +45,21 @@ npm start
 ```
 ***
 ### Tecnologias usadas:
-1. react `v17+`
-2. node-sass `v7+` (opcional).
-Facilita el uso de CSS al permitir anidar.
-3. react-dom `v17+`
-Controlar el render de un componente con una o multiples variables (useEffect).
-4. **react-router-dom `v17+`**
-Para crear categorías dinámicas.
-5. react-scripts `v5`
-6. **react-toastify `v8`**
-Usado para dar feedback al usuario sobre los eventos.
-7. web-vitals `v2+`
-8. **firebase `v9+`**
-Firebase: firestore database para base de datos de productos y pedidos.
+1. `react v17+`
+2. `node-sass v7+` (opcional).
+ - Facilita el uso de CSS al permitir anidar.
+3. `react-dom v17+`
+4. `react-router-dom v17+`
+ - Categorías dinámicas.
+5. `react-scripts v5`
+6. `react-toastify v8`
+ - Usado para dar feedback al usuario sobre los eventos.
+7. `web-vitals v2+`
+8. `firebase v9+`
+ - Firebase: firestore database para base de datos de productos y pedidos.
 
-#### Versión Final:
+### Versión Final:
+
 Deploy en [Netlify](https://app-react-addfuel-ecommer.netlify.app/):
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1e70ddfd-ef58-492f-895b-0e8d5484901f/deploy-status)](https://app.netlify.com/sites/app-react-addfuel-ecommer/deploys)
 
@@ -69,8 +69,5 @@ Deploy en [Vercel](https://addfuel-ecommerce-beta.vercel.app/):
 
 #### Contacto:
 
-[My GITHUB](https://github.com/garrus3000)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/garrus3000)
-
-[My Linkedin Profile](https://www.linkedin.com/in/eduardo-odriozola)
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=whit)](https://www.linkedin.com/in/eduardo-odriozola)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/garrus3000)
